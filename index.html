@@ -35,6 +35,7 @@
  
  <script> 
  $(document).ready(function () {
+
     $("button").click(function () {
 
         var t = Number($("#temp").val());
@@ -43,9 +44,10 @@
         if (!validateTemperature(t)) {
             return;
         }
+
         var result = convertTemperature(t, u);
 
-        alert("Temperature is " + result.value + " in " + result.unit);
+        $("#result").text("Temperature is " + result.value + " in " + result.unit);
     });
 
 });
@@ -83,6 +85,3 @@ function convertTemperature(t, u) {
 
     return { value: t1, unit: u1 };
 }
- </script>
-</body>
-</html>
